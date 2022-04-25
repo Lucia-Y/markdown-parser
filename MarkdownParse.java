@@ -22,6 +22,9 @@ public class MarkdownParse {
             else if (markdown.substring(openBracket - 1, openBracket).equals("!")) {
                 break;
             }
+            else if (openParen - closeBracket != 1) {
+                break;
+            }
             toReturn.add(markdown.substring(openParen + 1, closeParen));
             currentIndex = closeParen + 1;
         }
